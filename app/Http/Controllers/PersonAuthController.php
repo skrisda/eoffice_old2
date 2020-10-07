@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Person;
+use App\Models\Person;
 
 class PersonAuthController extends Controller
 {
@@ -184,7 +184,7 @@ class PersonAuthController extends Controller
         $ldaphost = "10.20.1.190";  // your ldap servers
         $Basedn = "ou=users,dc=tsu,dc=ac,dc=th";
         $ldapport = 389;
-        $login = $request->std_id;
+        $login = $request->username;
         $password = $request->password;
 
         $ds = ldap_connect($ldaphost, $ldapport) or die("Could not connect to $ldaphost");
@@ -210,10 +210,10 @@ class PersonAuthController extends Controller
         if ($info['count'] != 0) {
 
             if (self::password_check($info[0]["userpassword"][0], $password)) {
-                $student = Person::find($login);
+                $student = Person::where('ipass','=', $login)->get();
                 if ($student) {
                     $request->session()->put('ipass', $login);
-                    return redirect('studentuser');
+                    return redirect('office/home');
                 }else{
                     return redirect()->back()->with('error','ไม่มีรหัสนิสิต '.$login.' ในฐานข้อมูลนิสิตคณะวิทยาศาสตร์');
                 }

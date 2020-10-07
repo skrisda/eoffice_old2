@@ -16,15 +16,27 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', 'App\Http\Controllers\FrontendController@index');
 Route::get('/',[FrontendController::class, 'index']);
 Route::get('personLogin',[FrontendController::class, 'login']);
-Route::get('personAuth',[PersonAuthController::class, 'checklogin']);
+//Route::post('personAuth',[PersonAuthController::class, 'checklogin']);
+Route::post('personAuth','App\Http\Controllers\PersonAuthController@checklogin');
+
+Auth::routes();
+// *** USER ****/
+Route::group([
+    'prefix' => 'backend',
+    'middleware' => 'auth'
+], function(){
+    //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('dashboard', [App\Http\Controllers\BackendController::class, 'dashboard']);
+});
 
 
 Route::group([
     'prefix' => 'office',
-    'middleware' => 'stdauth'
+    'middleware' => 'personauth'
 
 ], function(){
 
-    Route::get('/', [OfficeController::class, 'home']);
+    //Route::get('/', [OfficeController::class, 'home']);
+    Route::get('home', [App\Http\Controllers\OfficeController::class,'home']);
 
 });

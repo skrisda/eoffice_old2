@@ -7,5 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    use HasFactory;
+    protected $table = "persons";
+    protected $fillable = [
+        'id',
+        'prefix',
+        'fname',
+        'lname',
+        'ipass',
+        'type',
+        'position',
+        'level',
+        'rank',
+        'statustype',
+        'belong',
+        'office',
+        'phone',
+        'local_phone',
+        'ustatus'
+    ];
 }

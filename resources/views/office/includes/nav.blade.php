@@ -111,31 +111,27 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li> --}}
-      <li class="nav-item mt-2"><span class="text-secondary">รหัสนิสิต</span> <span class="text-primary">{{ $student->std_id.' '.$student->tname.$student->fname.' '.$student->lname }}</span></li>
+      <li class="nav-item mt-2"><span class="text-secondary">รหัสนิสิต</span> <span class="text-primary"></span></li>
       <!-- Profile Dropdown Menu -->
       <li class="nav-item dropdown user user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="@if($student->avartar != ""){{asset('assets/images/students')}}/{{$student->avartar}} @else {{asset('assets/images/no_avatar.jpg')}} @endif" class="user-image img-circle elevation-2 alt="User Image">
+          <img src="#" class="user-image img-circle elevation-2 alt="User Image">
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- User image -->
           <li class="user-header bg-primary">
-            <img src="@if($student->avartar != ""){{asset('assets/images/students')}}/{{$student->avartar}} @else {{asset('assets/images/no_avatar.jpg')}} @endif" class="img-circle elevation-2" alt="User Image">
+            <img src="#" class="img-circle elevation-2" alt="User Image">
     
-            <p>
-              <small>{{ $student->std_id }}</small>
-              {{ $student->tname.$student->fname.' '.$student->lname }}
-            <small>หลักสูตร {{ $student->major->major_name }}</small>
-            </p>
+            
           </li>
           <!-- Menu Footer-->
           <li class="user-footer">
             <div class="row">
               <div class="col-md-6">
-                <a href="{{ url('studentuser/profiles') }}" class="btn btn-block btn-default btn-flat">ประวัติส่วนตัว</a>
+                <a href="#" class="btn btn-block btn-default btn-flat">ประวัติส่วนตัว</a>
               </div>
               <div class="col-md-6 text-right">
-                <form action="{{ url('studentuser/stdlogout') }}" method="post">
+                <form action="#" method="post">
                   @csrf
                   <button type="submit" class="btn btn-block btn-default btn-flat">ออกจากระบบ</button>
                 </form>

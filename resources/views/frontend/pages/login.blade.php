@@ -12,7 +12,7 @@
                 <div class="card-header bg-info">ล๊อกอินเข้าสู่ระบบด้วย TSU iPass</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('stdauth') }}">
+                    <form method="POST" action="{{ url('personAuth') }}">
                         @csrf
                         @if($message = Session::get('error'))
                         <div class="alert alert-danger text-center" role="alert">
@@ -23,7 +23,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Username</label>
 
                             <div class="col-md-6">
-                                <input id="std_id" name="std_id" type="text" class="form-control" autofocus>
+                                <input id="username" name="username" type="text" class="form-control" autofocus>
 
                             </div>
                         </div>
