@@ -38,5 +38,5 @@ Route::group([
 
     //Route::get('/', [OfficeController::class, 'home']);
     Route::get('home', [App\Http\Controllers\OfficeController::class,'home']);
-
+    Route::post('officeLogout', [App\Http\Controllers\PersonAuthController::class, 'logout']);
 });

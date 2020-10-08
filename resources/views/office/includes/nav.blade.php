@@ -111,34 +111,12 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li> --}}
-      <li class="nav-item mt-2"><span class="text-secondary">รหัสนิสิต</span> <span class="text-primary"></span></li>
+    <li class="nav-item mt-2"><span class="text-primary">@if($person->type ==2){{ config('global.rank')[$person->rank] }} @else {{ config('global.prefix')[$person->prefix] }}@endif{{ $person->fname.' '.$person->lname }}</span></li>
       <!-- Profile Dropdown Menu -->
       <li class="nav-item dropdown user user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="#" class="user-image img-circle elevation-2 alt="User Image">
+          <img src="{{asset('assets/images/no_avatar.jpg')}}" class="user-image img-circle elevation-2 alt="User Image">
         </a>
-        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <!-- User image -->
-          <li class="user-header bg-primary">
-            <img src="#" class="img-circle elevation-2" alt="User Image">
-    
-            
-          </li>
-          <!-- Menu Footer-->
-          <li class="user-footer">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="#" class="btn btn-block btn-default btn-flat">ประวัติส่วนตัว</a>
-              </div>
-              <div class="col-md-6 text-right">
-                <form action="#" method="post">
-                  @csrf
-                  <button type="submit" class="btn btn-block btn-default btn-flat">ออกจากระบบ</button>
-                </form>
-              </div>
-            </div>
-          </li>
-        </ul>
       </li>
 
     </ul>

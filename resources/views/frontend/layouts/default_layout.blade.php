@@ -20,24 +20,21 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
 
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item {{ (Request::segment(1) == '') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('/') }}">หนัาหลัก </a>
-                        </li>
-                        <li class="nav-item {{ (Request::segment(1) == 'contact') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('contact') }}">ติดต่อเรา</a>
-                        </li>
                         {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('service')}}">Service</a>
                         </li> --}}
                     </ul>
 
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item {{ (Request::segment(1) == 'stdlogin') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{url('personLogin')}}">ล๊อกอิน </a>
+                        <li class="nav-item {{ (Request::segment(1) == '') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('/') }}">หนัาหลัก </a>
                         </li>
-                        <li class="nav-item {{ (Request::segment(1) == 'login') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{url('login')}}">สำหรับผู้ดูแลระบบ </a>
+                        <li class="nav-item {{ (Request::segment(1) == 'contact') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ url('contact') }}">ติดต่อเรา</a>
                         </li>
+                        {{-- <li class="nav-item {{ (Request::segment(1) == 'login') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{url('login')}}">สำหรับผู้ดูแลระบบ </a>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

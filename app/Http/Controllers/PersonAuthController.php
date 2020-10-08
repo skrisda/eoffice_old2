@@ -215,13 +215,13 @@ class PersonAuthController extends Controller
                     $request->session()->put('ipass', $login);
                     return redirect('office/home');
                 }else{
-                    return redirect()->back()->with('error','ไม่มีรหัสนิสิต '.$login.' ในฐานข้อมูลนิสิตคณะวิทยาศาสตร์');
+                    return redirect()->back()->with('error','ไม่มีชื่อผู้ใช้ '.$login.' ในฐานข้อมูลคณะวิทยาศาสตร์');
                 }
             } else {
-                return redirect()->back()->with('error','รหัสนิสิตหรือรหัสผ่านไม่ถูกต้อง');
+                return redirect()->back()->with('error','ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
             }
         } else {
-            return redirect()->back()->with('error','รหัสนิสิตหรือรหัสผ่านไม่ถูกต้อง');
+            return redirect()->back()->with('error','ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
         }
     }
 

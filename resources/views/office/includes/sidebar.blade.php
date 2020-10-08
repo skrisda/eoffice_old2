@@ -3,7 +3,7 @@
     <a href="#" class="brand-link">
         <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">ระบบกิจกรรมนิสิต</span>
+        <span class="brand-text font-weight-light">e-Office</span>
     </a>
 
     <!-- Sidebar -->
@@ -65,7 +65,7 @@
               </p>
             </a>
           </li> --}}
-            <form action="{{ url('studentuser/stdlogout') }}" id="frm_logout" method="post">
+            <form action="{{ url('office/officeLogout') }}" id="frm_logout" method="post">
                 @csrf
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="document.getElementById('frm_logout').submit()">
