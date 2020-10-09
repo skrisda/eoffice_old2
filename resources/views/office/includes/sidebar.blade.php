@@ -25,7 +25,8 @@
 
 
             <li class="nav-item">
-                <a href="{{ url('studentuser/home') }}" class="nav-link {{ (request()->segment(2) == 'home') ? 'active' : '' }}">
+                <a href="{{ url('studentuser/home') }}"
+                    class="nav-link {{ (request()->segment(2) == 'home') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-home"></i>
                     <p>
                         หน้าหลัก
@@ -33,20 +34,49 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="{{ url('studentuser/summary') }}" class="nav-link {{ (request()->segment(2) == 'summary') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-cogs"></i>
+            <li class="nav-item has-treeview {{ (request()->segment(2)=='products')?'menu-open':'' }}
+            {{ (request()->segment(2)=='categories')?'menu-open':'' }}">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-plane"></i>
                     <p>
-                        สรุปการเข้าร่วมกิจกรรม
+                        ปฏิบัติงานนอกพื้นที่
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ url('backend/products') }}"
+                            class="nav-link {{ (request()->segment(2)=='products')?'active':'' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>แบบฟอร์มขออนุมัติ</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('backend/categories') }}"
+                            class="nav-link {{ (request()->segment(2)=='categories')?'active':'' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>รายงานการเดินทาง</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ url('studentuser/summary') }}"
+                    class="nav-link {{ (request()->segment(2) == 'summary') ? 'active' : '' }}">
+                    <i class="nav-icon fab fa-wpforms"></i>
+                    <p>
+                        ส่งข้อสอบ
                     </p>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="{{ url('studentuser/profiles') }}" class="nav-link {{ (request()->segment(2) == 'profiles') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-user"></i>
+                <a href="{{ url('studentuser/profiles') }}"
+                    class="nav-link {{ (request()->segment(2) == 'profiles') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-file-import"></i>
                     <p>
-                        ประวัติส่วนตัว
+                        รับเอกสาร
                     </p>
                 </a>
             </li>

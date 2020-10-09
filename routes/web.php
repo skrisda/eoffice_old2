@@ -19,7 +19,7 @@ Route::get('personLogin',[FrontendController::class, 'login']);
 //Route::post('personAuth',[PersonAuthController::class, 'checklogin']);
 Route::post('personAuth','App\Http\Controllers\PersonAuthController@checklogin');
 
-Auth::routes();
+//Auth::routes();
 // *** USER ****/
 Route::group([
     'prefix' => 'backend',
