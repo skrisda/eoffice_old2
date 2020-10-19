@@ -210,12 +210,12 @@ class PersonAuthController extends Controller
         if ($info['count'] != 0) {
 
             if (self::password_check($info[0]["userpassword"][0], $password)) {
-                $student = Person::where('ipass','=', $login)->get();
+                $student = Person::where('ipass','=', $login)->first();
                 if ($student) {
                     $request->session()->put('ipass', $login);
                     return redirect('office/home');
                 }else{
-                    return redirect()->back()->with('error','ไม่มีชื่อผู้ใช้ '.$login.' ในฐานข้อมูลคณะวิทยาศาสตร์');
+                    return redirect()->back()->with('error','ไม่มีชื่อผู้ใช้ '.$login.' ในฐานข้อมูล');
                 }
             } else {
                 return redirect()->back()->with('error','ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
