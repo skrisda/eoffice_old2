@@ -1,4 +1,4 @@
-@extends('office.layouts.default_layout')
+@extends('users.layouts.default_layout')
 @section('title') หน้าหลัก @parent @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="card-body">
-      
+      <iframe src="{{ url('users/pdf') }}" width="100%" height="600"></iframe>
     </div>
     <!-- /.card-body -->
   </div>

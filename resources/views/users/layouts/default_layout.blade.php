@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @include('office.includes.head_style')
+    @include('users.includes.head_style')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
-    @include('office.includes.nav')
+    @include('users.includes.nav')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('office.includes.sidebar')
+  @include('users.includes.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="margin-top: 60px">
@@ -21,11 +21,11 @@
   </div>
   <!-- /.content-wrapper -->
 
-    @include('office.includes.footer')
+    @include('users.includes.footer')
 
 </div>
 <!-- ./wrapper -->
 
-@include('office.includes.foot_script')
+@include('users.includes.foot_script')
 </body>
 </html>

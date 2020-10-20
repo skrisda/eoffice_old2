@@ -213,7 +213,7 @@ class PersonAuthController extends Controller
                 $student = Person::where('ipass','=', $login)->first();
                 if ($student) {
                     $request->session()->put('ipass', $login);
-                    return redirect('office/home');
+                    return redirect('users/home');
                 }else{
                     return redirect()->back()->with('error','ไม่มีชื่อผู้ใช้ '.$login.' ในฐานข้อมูล');
                 }

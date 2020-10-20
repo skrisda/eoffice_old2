@@ -31,12 +31,13 @@ Route::group([
 
 
 Route::group([
-    'prefix' => 'office',
+    'prefix' => 'users',
     'middleware' => 'personauth'
 
 ], function(){
 
     //Route::get('/', [OfficeController::class, 'home']);
+    Route::get('/', [App\Http\Controllers\OfficeController::class,'home']);
     Route::get('home', [App\Http\Controllers\OfficeController::class,'home']);
     Route::get('pdf', [App\Http\Controllers\OfficeController::class,'pdf_index']);
     Route::post('officeLogout', [App\Http\Controllers\PersonAuthController::class, 'logout']);

@@ -12,13 +12,13 @@ class OfficeController extends Controller
     {
         $ipass = session('ipass');
         $person = Person::where('ipass','=', $ipass)->first();
-        return view('office.pages.home')
+        return view('users.pages.home')
             ->with(compact('person'));
     }
 
     public function pdf_index(){
         $data = ["a" => "...", "b" => "..."  ];
-        $pdf = PDF::loadView('office.pages.test_pdf',$data);
+        $pdf = PDF::loadView('users.pages.examPdf',$data);
         return $pdf->stream('test.pdf');
     }
 }

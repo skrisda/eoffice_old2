@@ -25,7 +25,7 @@
 
 
             <li class="nav-item">
-                <a href="{{ url('studentuser/home') }}"
+                <a href="{{ url('users/home') }}"
                     class="nav-link {{ (request()->segment(2) == 'home') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-home"></i>
                     <p>
@@ -34,7 +34,29 @@
                 </a>
             </li>
 
-            <li class="nav-item has-treeview {{ (request()->segment(2)=='products')?'menu-open':'' }}
+            
+
+            <li class="nav-item">
+                <a href="{{ url('studentuser/summary') }}"
+                    class="nav-link {{ (request()->segment(2) == 'summary') ? 'active' : '' }}">
+                    <i class="nav-icon fab fa-wpforms"></i>
+                    <p>
+                        ส่งข้อสอบ
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ url('studentuser/profiles') }}"
+                    class="nav-link {{ (request()->segment(2) == 'profiles') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-file-import"></i>
+                    <p>
+                        รับเอกสาร
+                    </p>
+                </a>
+            </li>
+
+            {{-- <li class="nav-item has-treeview {{ (request()->segment(2)=='products')?'menu-open':'' }}
             {{ (request()->segment(2)=='categories')?'menu-open':'' }}">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-plane"></i>
@@ -59,29 +81,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{ url('studentuser/summary') }}"
-                    class="nav-link {{ (request()->segment(2) == 'summary') ? 'active' : '' }}">
-                    <i class="nav-icon fab fa-wpforms"></i>
-                    <p>
-                        ส่งข้อสอบ
-                    </p>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{ url('studentuser/profiles') }}"
-                    class="nav-link {{ (request()->segment(2) == 'profiles') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-file-import"></i>
-                    <p>
-                        รับเอกสาร
-                    </p>
-                </a>
-            </li>
-
-
+            </li> --}}
 
             <li class="nav-header">
                 <hr>
@@ -95,7 +95,7 @@
               </p>
             </a>
           </li> --}}
-            <form action="{{ url('office/officeLogout') }}" id="frm_logout" method="post">
+            <form action="{{ url('users/officeLogout') }}" id="frm_logout" method="post">
                 @csrf
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="document.getElementById('frm_logout').submit()">
