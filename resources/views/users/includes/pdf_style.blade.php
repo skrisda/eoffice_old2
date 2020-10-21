@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
     @font-face{
      font-family:  'THSarabunNew';
@@ -23,8 +24,9 @@
      font-weight: bold;
      src: url("{{ asset('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
     }
+
     body{
-     font-family: "THSarabunNew";
+     font-family: "THSarabunNew","DejaVu Sans Mono", monospace;
      font-size: 16px;
     }
     @page {
@@ -39,3 +41,4 @@
           }
         }
     </style>
+
